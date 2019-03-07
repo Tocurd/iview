@@ -257,6 +257,7 @@
                 dropDownWidth: 0,
                 visible: false,
                 focusIndex: -1,
+                hiddenDorp : false,
                 isFocused: false,
                 query: '',
                 initialLabel: this.label,
@@ -411,6 +412,9 @@
             }
         },
         methods: {
+            mouseenter(){
+                console.log("mouseenter")
+            },
             setQuery(query){ // PUBLIC API
                 if (query) {
                     this.onQueryChange(query);
