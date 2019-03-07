@@ -1,6 +1,11 @@
 <template>
     <div style="margin: 200px;">
-        <Select size="small" v-model="model10" multiple style="width:260px">
+        <Select v-model="test" :filterable="true">
+            <Option value="dd" :lable='"123"'>
+                12314
+            </Option>
+        </Select>
+        <!-- <Select size="small" v-model="model10" multiple style="width:260px">
             <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
         </Select>
         <Select v-model="model10" multiple style="width:260px">
@@ -8,13 +13,14 @@
         </Select>
         <Select size="large" v-model="model10" multiple style="width:260px">
             <Option v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-        </Select>
+        </Select> -->
     </div>
 </template>
 <script>
     export default {
         data () {
             return {
+                test : "",
                 cityList: [
                     {
                         value: 'New York',
