@@ -1,31 +1,31 @@
 <template>
     <div style="margin: 200px;">
         <Select v-model="test" :transfer="true">
-            <Option value="dd" lable='123'>12314</Option>
+            <Option value="dd" :label='`<span style="color:#ff0000">321321</span> 12314`'><span style="color:#ff0000">321321</span> 12314</Option>
         </Select>
 
         <Select v-model="test1" :transfer="true">
-            <Option value="dd" lable='123'>12314</Option>
+            <Option value="dd" :label='`<span style="color:#ff0000">321321</span> 12314`'><span style="color:#ff0000">321321</span> 12314</Option>
         </Select>
 
         <Select v-model="test2" :transfer="true">
-            <Option value="dd" lable='123'>12314</Option>
+            <Option value="dd" :label='`<span style="color:#ff0000">321321</span> 12314`'><span style="color:#ff0000">321321</span> 12314</Option>
         </Select>
 
         <Select v-model="test3" :transfer="true">
-            <Option value="dd" lable='123'>12314</Option>
+            <Option value="dd" :label='`<span style="color:#ff0000">321321</span> 12314`'><span style="color:#ff0000">321321</span> 12314</Option>
         </Select>
 
         <Select v-model="test4" :transfer="true">
-            <Option value="dd" lable='123'>12314</Option>
+            <Option value="dd" :label='`<span style="color:#ff0000">321321</span> 12314`'><span style="color:#ff0000">321321</span> 12314</Option>
         </Select>
 
         <Select v-model="test5" :transfer="true">
-            <Option value="dd" lable='123'>12314</Option>
+            <Option value="dd" :label='`<span style="color:#ff0000">321321</span> 12314`'><span style="color:#ff0000">321321</span> 12314</Option>
         </Select>
 
         <Select v-model="test6" :transfer="true">
-            <Option value="dd" lable='123'>12314</Option>
+            <Option value="dd" :label='`<span style="color:#ff0000">321321</span> 12314`'><span style="color:#ff0000">321321</span> 12314</Option>
         </Select>
 
 

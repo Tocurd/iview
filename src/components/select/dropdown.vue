@@ -1,5 +1,5 @@
 <template>
-    <div class="ivu-select-dropdown" :class="className" :style="styles"><slot></slot></div>
+    <div class="ivu-select-dropdown" v-if="dropVisible" :class="className" :style="styles"><slot></slot></div>
 </template>
 <script>
     import Vue from 'vue';
@@ -21,6 +21,9 @@
             },
             transfer: {
                 type: Boolean
+            },
+            dropVisible: {
+                type: Boolean
             }
         },
         data () {
@@ -41,8 +44,15 @@
                 return style;
             }
         },
+        watch : {
+            dropVisible(){
+                this.dropVisible ? this.update() : this.destroy();
+            }
+        },
         methods: {
             update () {
+                if(this.dropVisible == false) return;
+
                 if (isServer) return;
                 if (this.popper) {
                     this.$nextTick(() => {
