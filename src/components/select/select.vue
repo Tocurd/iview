@@ -58,18 +58,16 @@
                 :transfer="transfer"
                 v-transfer-dom
             >
-                <template v-if="dropVisible">
-                    <ul v-show="showNotFoundLabel" :class="[prefixCls + '-not-found']"><li>{{ localeNotFoundText }}</li></ul>
-                    <ul :class="prefixCls + '-dropdown-list'">
-                        <functional-options
-                            v-if="(!remote) || (remote && !loading)"
-                            :options="selectOptions"
-                            :slot-update-hook="updateSlotOptions"
-                            :slot-options="slotOptions"
-                        ></functional-options>
-                    </ul>
-                    <ul v-show="loading" :class="[prefixCls + '-loading']">{{ localeLoadingText }}</ul>
-                </template>
+                <ul v-show="showNotFoundLabel" :class="[prefixCls + '-not-found']"><li>{{ localeNotFoundText }}</li></ul>
+                <ul :class="prefixCls + '-dropdown-list'">
+                    <functional-options
+                        v-if="(!remote) || (remote && !loading)"
+                        :options="selectOptions"
+                        :slot-update-hook="updateSlotOptions"
+                        :slot-options="slotOptions"
+                    ></functional-options>
+                </ul>
+                <ul v-show="loading" :class="[prefixCls + '-loading']">{{ localeLoadingText }}</ul>
             </Drop>
         </transition>
     </div>

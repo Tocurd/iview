@@ -1,5 +1,5 @@
 <template>
-    <div class="ivu-select-dropdown" v-if="dropVisible" :class="className" :style="styles"><slot></slot></div>
+    <div class="ivu-select-dropdown" v-if="show" :class="className" :style="styles"><slot></slot></div>
 </template>
 <script>
     import Vue from 'vue';
@@ -30,9 +30,25 @@
             return {
                 popper: null,
                 width: '',
+                show : false,
+                timeoutId : -1,
                 popperStatus: false,
                 tIndex: this.handleGetIndex()
             };
+        },
+        watch : {
+            dropVisible(){
+                if(this.dropVisible){
+                    clearTimeout(this.timeoutId)
+                    this.update()
+                    this.show = true;
+                }else{
+                    this.destroy();
+                    this.timeoutId = setTimeout(() => {
+                        this.show = false;
+                    } , 600)
+                }
+            }
         },
         computed: {
             styles () {
@@ -44,11 +60,7 @@
                 return style;
             }
         },
-        watch : {
-            dropVisible(){
-                this.dropVisible ? this.update() : this.destroy();
-            }
-        },
+
         methods: {
             update () {
                 if(this.dropVisible == false) return;

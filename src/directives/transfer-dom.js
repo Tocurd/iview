@@ -17,7 +17,7 @@ function getTarget (node) {
 const directive = {
     inserted (el, { value }, vnode) {
 
-        console.log("inserted")
+        if(typeof el == 'undefined' || typeof el.className == 'undefined') return;
 
         if ( el.dataset && el.dataset.transfer !== 'true') return false;
         el.className = el.className ? el.className + ' v-transfer-dom' : 'v-transfer-dom';
@@ -25,6 +25,8 @@ const directive = {
         if (!parentNode) return;
         const home = document.createComment('');
         let hasMovedOut = false;
+
+        console.log(parentNode)
 
         if (value !== false) {
             parentNode.replaceChild(home, el); // moving out, el is no longer in the document
@@ -42,7 +44,7 @@ const directive = {
     },
     componentUpdated (el, { value }) {
 
-        console.log("componentUpdated")
+        if(typeof el == 'undefined' || typeof el.className == 'undefined') return;
 
         if ( el.dataset && el.dataset.transfer !== 'true') return false;
         // need to make sure children are done updating (vs. `update`)
@@ -70,11 +72,9 @@ const directive = {
     },
     unbind (el) {
 
-        console.log("unbind")
+        if(typeof el == 'undefined' || typeof el.className == 'undefined') return;
 
         if (el.dataset && el.dataset.transfer !== 'true') return false;
-        if (typeof el == 'undefined') return false;
-        if (typeof el.className == 'undefined') return false;
         el.className = el.className.replace('v-transfer-dom', '');
         const ref$1 = el.__transferDomData;
         if (!ref$1) return;
