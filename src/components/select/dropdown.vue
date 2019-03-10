@@ -44,9 +44,10 @@
                     this.show = true;
                 }else{
                     this.destroy();
-                    this.timeoutId = setTimeout(() => {
-                        this.show = false;
-                    } , 600)
+                    // this.timeoutId = setTimeout(() => {
+                    // this.destroy();
+                    //     this.show = false;
+                    // } , 600)
                 }
             }
         },
