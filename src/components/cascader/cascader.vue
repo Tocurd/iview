@@ -25,6 +25,7 @@
                 v-show="visible"
                 :class="{ [prefixCls + '-transfer']: transfer }"
                 ref="drop"
+                :dropVisible="visible"
                 :data-transfer="transfer"
                 :transfer="transfer"
                 v-transfer-dom>
