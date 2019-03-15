@@ -10,6 +10,7 @@
                 :class="dropdownCls"
                 v-show="currentVisible"
                 :placement="placement"
+                :dropVisible="currentVisible"
                 ref="drop"
                 @mouseenter.native="handleMouseenter"
                 @mouseleave.native="handleMouseleave"

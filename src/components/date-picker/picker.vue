@@ -38,6 +38,7 @@
                 :class="{ [prefixCls + '-transfer']: transfer }"
                 :placement="placement"
                 ref="drop"
+                :dropVisible="visible"
                 :data-transfer="transfer"
                 :transfer="transfer"
                 v-transfer-dom>

@@ -36,6 +36,7 @@
             <Drop
                 v-transfer-dom
                 v-show="visible"
+                :dropVisible="visible"
                 ref="drop"
                 :placement="placement"
                 :data-transfer="transfer"

@@ -11,6 +11,7 @@
             <Drop
                 v-show="opened"
                 placement="bottom"
+                :dropVisible="opened"
                 ref="drop"
                 :style="dropStyle"><ul :class="[prefixCls + '-drop-list']"><slot></slot></ul>
             </Drop>
