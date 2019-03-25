@@ -23,7 +23,7 @@
                 type: Boolean
             },
             dropVisible: {
-                type: Boolean
+                type: [Boolean , Number]
             }
         },
         data () {
@@ -38,6 +38,11 @@
         },
         watch : {
             dropVisible(){
+                if(this.dropVisible == -1){
+                    this.update();
+                    this.show = true;
+                    return;
+                }
                 if(this.dropVisible){
                     clearTimeout(this.timeoutId)
                     this.update()
@@ -131,6 +136,11 @@
         created () {
             this.$on('on-update-popper', this.update);
             this.$on('on-destroy-popper', this.destroy);
+            if(this.dropVisible == -1){
+                this.update();
+                this.show = true;
+                return;
+            }
         },
         beforeDestroy () {
             if (this.popper) {
